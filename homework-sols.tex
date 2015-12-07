@@ -1,0 +1,103 @@
+\documentclass{amsart}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+
+\title{Topology Homework}
+\author{Kang-Li Cheng}
+\date{October 2, 2015}
+
+\begin{document}
+
+\maketitle
+
+\section{Homework 1}
+1. Exhibit an infinite collection of open sets of $\mathbb{R}$ whose intersection is not open. 
+\begin{proof}
+$\bigcup_{n\in\mathbb{N}}(-1-\frac{1}{n}, 1+\frac{1}{n})=[-1, 1]$, a closed set. 
+\end{proof}
+
+2. Show that every open set in $\mathbb{R}$ is the union of disjoint open intervals $(a, b)$, where we allow $a=-\infty$ and $b=\infty$. 
+\begin{proof}
+Let $A\subseteq\mathbb{R}$ be an open set. Let $j\in\mathbb{Q}$ and let $I_j$ be the largest open interval that contains $j$ and $I\subset A$. Since $A$ is an open set, $a_j=inf\{x_i:[x, j]\subseteq\mathbb{A}\}$ and $b_j=sup\{x:[j,x]\subseteq\mathbb{A}\}$, so $I_j=(a_j, b_j)$, a countable set. 
+Note that $\{I_j:j\in\mathbb{Q}\}$ contains duplicates. If $i\in\mathbb{Q}$ and $i\in I_j$, then $I_j=I_i$, since $I_i$ is the largest open interval containing $i$ and $I_i\subset A$. Since $i\in I_j, I_j\subseteq I_i$. But $j\in I_i$, so $I_i\subseteq I_j$. If $i\notin I_j$, then $I_j\bigcap I_i=\emptyset$. So any two intervals are either disjoint or identical. If we remove duplicates, $\bigcup_{j\in\mathbb{Q}}=\bigcup_{k=1}^\infty I_k$. Note that each $I_k\subseteq A$, so $\bigcup_{k=1}^\infty I_k\subseteq A$. Suppose $x\in A$, then $\exists n\in\mathbb{N} s.t. (x-1/n, x+1/n)\subseteq A$. Then $\exists j\in\mathbb{Q}, j\in(x-1/n, x+1/n)\subseteq A$. So the largest open interval that contains $j$ and is a subset of $A$ will include $(x-1/n, x+1/n)$. Therefore $x\in\bigcup_{k=1}^\infty I_k$ and $A= \bigcup_{k=1}^\infty I_k$. 
+\end{proof}
+3. Compare the following topologies on $\mathbb{R}$ based on fineness/coarseness.
+\begin{proof}
+\end{proof}
+4. Show that the composition of any two continuous maps is a continuous map and the composition of any two homeomorphisms is a homeomorphism.
+\begin{proof}
+Let $f:X\leftarrow Y$ and $g:Y\leftarrow Z$ be continuous maps between topological spaces $X, Y$, and $Z$. Suppose $V\subseteq Z$ is an open set. Then $g^{-1}(V)$ is open in $Y$ since $g$ is a continuous map. Now $f^{-1}(g^{-1}(V))$ is open in $X$ because $f$ because is also a continuous map. Note that $f^{-1}g^{-1}(V))=(g\circ f)^{-1}(V)$, so $g\circ f$ is a continuous map. 
+
+
+
+\end{proof}
+
+5. Let $X=\{a, b\}$. List all the topologies on $X$. How many are there up to homeomorphism? Do the same for $Y=\{a, b, c\}$. 
+
+\begin{proof}
+\end{proof}
+
+\section{Homework 2}
+
+1. For a subset $U$ of a topological space $X$ show $1)$, every open set contained in $U$ is contained in $int(U)$. So $int(U)$ is the largest open set contained in $U$. 
+
+\begin{proof}
+The interior of a set $A$ is the union of all open subsets of $A$. Let $X\in int(U)$, then $\exists$ neighborhood $U_x(\epsilon)\subseteq U$. Since $U_x$ is an open set, $\forall y\in U_x \exists U_x(\delta$ such that $U_x(\delta)\subseteq U_x(\epsilon)\subseteq U$, so $y\in int(U)$. Therefore $U_x(\epsilon)\subseteq int(U)$ and we know $int(U)$ is open. Suppose $V\subseteq U$ is an open set in $X$. Then for each $v\in V, \exists t>)$ such that $U_v(t)\subseteq V$, so $U_v(t)\subseteq U$ and $v\in int(U).$ So any open subset of $U$ is in a subset of $int(U). $ 
+
+\end{proof}
+
+2. Every closed set containing $U$ contains $\bar{U}$. So closure of $U$ is the smallest closed set containing $U$. 
+\begin{proof}
+Let $V$ be a closed set containing $U$. Let $x\in \bar{U}$, so $U_x(\epsilon)\cap U \neq \emptyset, \forall \epsilon >0. (U_x(\epsilon)\cup V \neq \emptyset$ because $U\subseteq V$. So $x\in \bar{V}$ and $\bar{V}=V$ since $V$ is a closed set. Then $x\in V$. Now it remains to show that $\bar{U}$ is closed. Suppose $x\in\bar{U}^c.$ Then $\exists U_x(\epsilon) \cup U = \emptyset$, so $U_x(\epsilon) \subset U^c$. Now suppose $z\inU_x(\epsilon)\cup \bar{U}$. Then $\forall\epsilon>0, U_x$. 
+\end{proof}
+
+3. Show that the closure $\bar{A}$ of $A$ is the union of $A$ with all of its accumulation points. 
+
+\section{Fundamental Group} 
+11/22/15
+
+1. A subset $A$ of $\mathbb{R}^n$ is said to be star convex if for some point $a_0$ of $A$, all the line segments joining $a_0$ to other points of $A$ lie in $A$.
+
+a)Find a star convex set that is not convex. 
+b) Show that if $A$ is star convex, $A$ is simply connected.
+
+\begin{proof}
+Let $x, y\in A$. Then we can construct a path from $x$ to $a$, and a path from $a$ to $y$ because $A$ is star convex. The composition of these paths is a path from $x$ to $y$. Now for any loop $p(r)$, let $F(r,t)=ta+(1-t)p(r)$ be the (straight-line) homotopy between $p$ and a point.
+\end{proof}
+
+2. Let $\alpha$ be a path in $X$ from $x_0$ to $x_1$; let $\beta$ be a path in $X$ from $x_1$ to $x_2$. Show that if $\gamma=\alpha*\beta,$ then $\hat{\gamma}=\hat{\beta}\circ \hat{\alpha}$.
+\begin{proof}
+\end{proof}
+
+3. Let $x_0, x_1$ be points of path-connected space $X$. Show that $\pi_1(X, x_0)$ is abelian $\iff$ for every pair $\alpha, \beta$ of paths from $x_0$ to $x_1$, we have $\hat{\alpha}=\hat{\beta}$. 
+\begin{proof}
+\end{proof}
+
+\section{Homework 8}
+6.1 If $A$ is a deformation retract of $X$, then $A\simeq X$.
+\begin{proof}
+\end{proof}
+1. Let $X$ be the figure-eight space, that is, the subspace of the plane consisting of the circles of radius $1$ centered at $(0,1)$ and $(0,-1)$. Let $Y$ be theta space, the subspace of the plane consisting of $S^1$ together with the diameter from $(-1,0)$ to $(1,0)$. Describe maps $f:X\to Y$ and $g:Y\to X$ that are homotopy inverses of each other.
+
+\begin{proof}
+The figure eight space is two unit circles centered at the y-axis and tangent to each other at the origin. Theta space is unit circle $\cup [-1,1] \times 0$. Divide the figure eight by cutting across at $y=1$ and $y=-1$. So $f(x,y)= [ \begin{cases}  (x,y-1),y>1 \\(x,0), \abs{y}\le 1 \\(x,y+1). y< -1
+   \end{cases}
+]$
+\end{proof}
+7.1 a) Show that identity element $e_G$ of a group $G$ is unique, that is, if $f\in G$ also satisfies $fa=af=a$ for all $a\in G$, then $e_G=f$.
+\begin{proof}
+Suppose $f\in G$ satisfies $fa=af=a$ for all $a\in G$ and $f\neq e_G$. Then $af=a,ae=a$. We set $a=f$ in the first expression and $a=e$ in the second. Then  $ff=f=ee=e$, so $f=e$. 
+\end{proof}
+
+b) Suppose $G$ is a group for which $x^2=e$ $\forall x\in G$. Show that $G$ is abelian.
+
+\begin{proof}
+Let $a,b\in G$. Clearly if $a=b$ then $ab=ba$. Consider $a\ne b$ and suppose $ab\ne ba$. Then $a^2b=eb\ne ba^2=be$, a contradiction. 
+\end{proof}
+
+7.3 Prove that the connected component $C$ of a topological group $G$ containing the identity $e$ has the property that $x^{-1}$ and $xy$ are in $C$ for every $x, y, \in C$. So $C$ is a subgroup of $G$.
+\begin{proof}
+\end{proof}
+
+
+\end{document}
